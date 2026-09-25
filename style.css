@@ -1,0 +1,274 @@
+:root {
+    --bg: #0a0508;
+    --bg-soft: #12080f;
+    --card: #1a0c14;
+    --text: #f5e6ef;
+    --muted: #c9a0b8;
+    --accent: #ff4d8d;
+    --accent-soft: #ff7eb3;
+    --gold: #f0c987;
+    --border: #3a1a2a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 4rem;
+}
+
+header {
+    text-align: center;
+    padding: 3rem 1rem 2.5rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
+}
+
+.subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.8rem, 6vw, 2.8rem);
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 30px rgba(255, 77, 141, 0.35);
+}
+
+.tagline {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: var(--accent-soft);
+    margin-bottom: 1.5rem;
+}
+
+.holy-line {
+    font-size: 1rem;
+    color: var(--muted);
+    font-style: italic;
+    max-width: 36em;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    justify-content: center;
+    padding: 1.25rem 0 2rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2.5rem;
+    position: sticky;
+    top: 0;
+    background: rgba(10, 5, 8, 0.92);
+    backdrop-filter: blur(8px);
+    z-index: 10;
+}
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+section {
+    margin-bottom: 3.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.03em;
+}
+
+h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    color: var(--accent-soft);
+    margin: 1.75rem 0 0.75rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.commandments {
+    list-style: none;
+    counter-reset: cmd;
+}
+
+.commandments li {
+    position: relative;
+    padding-left: 2.5rem;
+    margin-bottom: 1.35rem;
+    counter-increment: cmd;
+}
+
+.commandments li::before {
+    content: counter(cmd);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 1.15rem;
+}
+
+.commandments strong {
+    color: var(--accent-soft);
+}
+
+.amen {
+    text-align: center;
+    font-style: italic;
+    color: var(--gold);
+    margin-top: 1.5rem;
+    font-size: 1.15rem;
+}
+
+.prayer {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.prayer-text {
+    font-style: italic;
+    color: var(--muted);
+    line-height: 1.85;
+}
+
+.psalm {
+    font-style: italic;
+    color: var(--muted);
+    padding-left: 1rem;
+    border-left: 3px solid var(--accent);
+    margin: 1rem 0 1.5rem;
+}
+
+blockquote {
+    background: var(--card);
+    border-left: 4px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.25rem 0;
+    font-style: italic;
+    color: var(--muted);
+}
+
+ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+}
+
+.proverbs {
+    list-style: none;
+    padding-left: 0;
+}
+
+.proverbs li {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.proverbs li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.final {
+    text-align: center;
+    border-bottom: none;
+}
+
+.big-amen {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    color: var(--accent);
+    margin: 2rem 0 1rem;
+    letter-spacing: 0.08em;
+}
+
+.signature {
+    font-style: italic;
+    color: var(--gold);
+    margin-top: 1.5rem;
+}
+
+footer {
+    text-align: center;
+    padding-top: 2rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 1.05rem;
+    }
+    
+    .container {
+        padding: 1.25rem 1rem 3rem;
+    }
+    
+    nav {
+        gap: 0.5rem 0.75rem;
+    }
+    
+    nav a {
+        font-size: 0.72rem;
+    }
+}
